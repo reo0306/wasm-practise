@@ -1,10 +1,11 @@
 [package]
-name = "hello-wasi-cli"
+name = "my-grep"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ferris-says = "0.3.2"
+anyhow = "1.0.95"
+clap = { version = "4.5.27", features = ["derive"] }
 wit-bindgen-rt = { version = "0.38.0", features = ["bitflags"] }
 
 [profile.release]
@@ -15,6 +16,6 @@ strip = true
 lto = true
 
 [package.metadata.component]
-package = "component:hello-wasi-cli"
+package = "component:my-grep"
 
 [package.metadata.component.dependencies]

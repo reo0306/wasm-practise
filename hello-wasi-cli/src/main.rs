@@ -1,3 +1,7 @@
+use ferris_says::say;
+
 fn main() {
-    println!("Hello, world!");
+    if let Err(e)= say("Hello, world!", 80, &mut std::io::stdout()) {
+        println!("{e}");
+    }
 }
