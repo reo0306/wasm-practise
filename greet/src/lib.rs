@@ -1,7 +1,7 @@
 #[allow(warnings)]
 mod bindings;
 
-use crate::bindings::exports::component::greet::greetable::Guest;
+use crate::bindings::exports::reo0306::greet::greetable::Guest;
 
 struct Component;
 

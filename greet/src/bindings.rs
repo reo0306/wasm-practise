@@ -4,7 +4,7 @@
 #[rustfmt::skip]
 #[allow(dead_code, clippy::all)]
 pub mod exports {
-    pub mod component {
+    pub mod reo0306 {
         pub mod greet {
             #[allow(dead_code, clippy::all)]
             pub mod greetable {
@@ -64,25 +64,24 @@ pub mod exports {
                     fn greet(name: _rt::String) -> _rt::String;
                 }
                 #[doc(hidden)]
-                macro_rules! __export_component_greet_greetable_cabi {
+                macro_rules! __export_reo0306_greet_greetable_cabi {
                     ($ty:ident with_types_in $($path_to_types:tt)*) => {
-                        const _ : () = { #[export_name =
-                        "component:greet/greetable#name"] unsafe extern "C" fn
-                        export_name() -> * mut u8 { $($path_to_types)*::
-                        _export_name_cabi::<$ty > () } #[export_name =
-                        "cabi_post_component:greet/greetable#name"] unsafe extern "C" fn
+                        const _ : () = { #[export_name = "reo0306:greet/greetable#name"]
+                        unsafe extern "C" fn export_name() -> * mut u8 {
+                        $($path_to_types)*:: _export_name_cabi::<$ty > () } #[export_name
+                        = "cabi_post_reo0306:greet/greetable#name"] unsafe extern "C" fn
                         _post_return_name(arg0 : * mut u8,) { $($path_to_types)*::
                         __post_return_name::<$ty > (arg0) } #[export_name =
-                        "component:greet/greetable#greet"] unsafe extern "C" fn
+                        "reo0306:greet/greetable#greet"] unsafe extern "C" fn
                         export_greet(arg0 : * mut u8, arg1 : usize,) -> * mut u8 {
                         $($path_to_types)*:: _export_greet_cabi::<$ty > (arg0, arg1) }
-                        #[export_name = "cabi_post_component:greet/greetable#greet"]
-                        unsafe extern "C" fn _post_return_greet(arg0 : * mut u8,) {
+                        #[export_name = "cabi_post_reo0306:greet/greetable#greet"] unsafe
+                        extern "C" fn _post_return_greet(arg0 : * mut u8,) {
                         $($path_to_types)*:: __post_return_greet::<$ty > (arg0) } };
                     };
                 }
                 #[doc(hidden)]
-                pub(crate) use __export_component_greet_greetable_cabi;
+                pub(crate) use __export_reo0306_greet_greetable_cabi;
                 #[repr(align(4))]
                 struct _RetArea([::core::mem::MaybeUninit<u8>; 8]);
                 static mut _RET_AREA: _RetArea = _RetArea(
@@ -141,19 +140,19 @@ macro_rules! __export_greetable_provider_impl {
     };
     ($ty:ident with_types_in $($path_to_types_root:tt)*) => {
         $($path_to_types_root)*::
-        exports::component::greet::greetable::__export_component_greet_greetable_cabi!($ty
-        with_types_in $($path_to_types_root)*:: exports::component::greet::greetable);
+        exports::reo0306::greet::greetable::__export_reo0306_greet_greetable_cabi!($ty
+        with_types_in $($path_to_types_root)*:: exports::reo0306::greet::greetable);
     };
 }
 #[doc(inline)]
 pub(crate) use __export_greetable_provider_impl as export;
 #[cfg(target_arch = "wasm32")]
-#[link_section = "component-type:wit-bindgen:0.36.0:component:greet:greetable-provider:encoded world"]
+#[link_section = "component-type:wit-bindgen:0.36.0:reo0306:greet:greetable-provider:encoded world"]
 #[doc(hidden)]
-pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 249] = *b"\
-\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07q\x01A\x02\x01A\x02\x01\
+pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 245] = *b"\
+\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07m\x01A\x02\x01A\x02\x01\
 B\x04\x01@\0\0s\x04\0\x04name\x01\0\x01@\x01\x04names\0s\x04\0\x05greet\x01\x01\x04\
-\0\x19component:greet/greetable\x05\0\x04\0\"component:greet/greetable-provider\x04\
+\0\x17reo0306:greet/greetable\x05\0\x04\0\x20reo0306:greet/greetable-provider\x04\
 \0\x0b\x18\x01\0\x12greetable-provider\x03\0\0\0G\x09producers\x01\x0cprocessed-\
 by\x02\x0dwit-component\x070.220.0\x10wit-bindgen-rust\x060.36.0";
 #[inline(never)]

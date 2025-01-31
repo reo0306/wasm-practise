@@ -1,4 +1,4 @@
-package component:greet;
+package reo0306:greet;
 
 
 interface greetable {
