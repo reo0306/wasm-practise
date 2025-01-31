@@ -16,9 +16,23 @@ fn start(args: Args) -> anyhow::Result<()> {
     let engine = Engine::default();
 
     let component = Component::from_file(&engine, &args.wasm_file)?;
+
     let linker = Linker::new(&engine);
     let mut store = Store::new(&engine, ());
 
+    let provider= GreetableProvider::instantiate(&mut store, &component, &linker)?;
+
+    let greetable = provider.reo0306_greet_greetable();
+
+    let message = greetable.call_greet(&mut store, "world")?;
+    println!("{message}");
+
+    let name = greetable.call_name(&mut store)?;
+    let message = greetable.call_greet(&mut store, &name)?;
+    println!("{message}");
+
+    Ok(())
+/*
     let instance = linker.instantiate(&mut store, &component)?;
 
     let greetable_index = instance.get_export(
@@ -52,6 +66,7 @@ fn start(args: Args) -> anyhow::Result<()> {
     println!("{return_value}");
 
     Ok(())
+*/
 }
 
 fn main() {
