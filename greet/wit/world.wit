@@ -1,6 +1,5 @@
 package reo0306:greet;
 
-
 interface greetable {
     name: func() -> string;
     greet: func(name: string) -> string;
@@ -10,3 +9,11 @@ world greetable-provider {
     export greetable;
 }
 
+interface sayable {
+    say: func () -> string;
+}
+
+world hello-world {
+    import reo0306:greet/greetable;
+    export sayable;
+}
