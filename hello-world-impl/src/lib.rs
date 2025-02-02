@@ -1,14 +1,19 @@
 #[allow(warnings)]
 mod bindings;
 
-use bindings::Guest;
+use bindings::exports::reo0306::greet::sayable::Guest;
+use bindings::reo0306::greet::greetable::{name, greet};
 
 struct Component;
 
 impl Guest for Component {
-    /// Say hello!
-    fn hello_world() -> String {
-        "Hello, World!".to_string()
+    fn say() -> String {
+        let name = name();
+        let greetings = greet(&name);
+        let mut buffer = Vec::new();
+
+        ferris_says::say(&greetings, 80, &mut buffer).unwrap();
+        String::from_utf8(buffer).unwrap()
     }
 }
 

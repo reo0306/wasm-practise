@@ -8,12 +8,3 @@ interface greetable {
 world greetable-provider {
     export greetable;
 }
-
-interface sayable {
-    say: func () -> string;
-}
-
-world hello-world {
-    import reo0306:greet/greetable;
-    export sayable;
-}
