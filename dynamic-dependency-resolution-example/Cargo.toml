@@ -7,3 +7,4 @@ edition = "2021"
 anyhow = "1.0.95"
 clap = { version = "4.5.27", features = ["derive"] }
 wasmtime = "29.0.1"
+wasmtime-wasi = "29.0.1"
