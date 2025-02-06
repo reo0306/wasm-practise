@@ -5,8 +5,11 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.95"
+bitflags = "2.8.0"
 clap = { version = "4.5.27", features = ["derive"] }
 png-glitch = "0.5.0"
+wit-bindgen-rt = "0.39.0"
 
 [package.metadata.component]
 package = "reo0306:glitch-art"
+target = "reo0306:glitch-art/png-glitch-cli@0.1.0"

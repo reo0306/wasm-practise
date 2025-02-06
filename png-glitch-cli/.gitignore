@@ -1,0 +1,4 @@
+/target
+/wit/wit.lock
+/wit/wkg.lock
+/wit/*.wasm
