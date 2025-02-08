@@ -1,0 +1,14 @@
+spin_manifest_version = 2
+
+[application]
+name = "hello-world-with-spin"
+version = "0.1.0"
+authors = ["reo0306 <reo19840306@gmail.com>"]
+description = ""
+
+[component.hello-world]
+source = "/Users/tamurashigeki/Develop/Docker/wasm/wasm-practise/hello-wasi-http/target/wasm32-wasip1/debug/hello_wasi_http.wasm"
+
+[[trigger.http]]
+component = "hello-world"
+route = "/hello-world/..."
