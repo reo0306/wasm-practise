@@ -12,3 +12,16 @@ source = "/Users/tamurashigeki/Develop/Docker/wasm/wasm-practise/hello-wasi-http
 [[trigger.http]]
 component = "hello-world"
 route = "/hello-world/..."
+
+[[trigger.http]]
+route = "/echo/..."
+component = "echo"
+
+[component.echo]
+source = "echo/target/wasm32-wasip1/release/echo.wasm"
+allowed_outbound_hosts = []
+
+[component.echo.build]
+command = "cargo build --target wasm32-wasip1 --release"
+workdir = "echo"
+watch = ["src/**/*.rs", "Cargo.toml"]
