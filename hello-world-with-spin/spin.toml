@@ -25,3 +25,10 @@ allowed_outbound_hosts = []
 command = "cargo build --target wasm32-wasip1 --release"
 workdir = "echo"
 watch = ["src/**/*.rs", "Cargo.toml"]
+
+[[trigger.http]]
+route = "/glitch"
+component = "glitch"
+
+[component.glitch]
+source = "../glitch-art-api/first-glitch-art-api.wasm"
